@@ -59,10 +59,9 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SPI1_CS_Pin GPIO_PIN_4
-#define SPI1_CS_GPIO_Port GPIOA
 #define JOYSTICK_BTN_Pin GPIO_PIN_8
 #define JOYSTICK_BTN_GPIO_Port GPIOA
+#define JOYSTICK_BTN_EXTI_IRQn EXTI4_15_IRQn
 #define JOYSTICK_Y_Pin GPIO_PIN_11
 #define JOYSTICK_Y_GPIO_Port GPIOA
 #define JOYSTICK_X_Pin GPIO_PIN_12

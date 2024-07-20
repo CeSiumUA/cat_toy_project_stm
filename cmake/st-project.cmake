@@ -93,6 +93,8 @@ target_sources(
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal.c"
+    "CMakeFiles\\3.28.1\\CompilerIdC\\CMakeCCompilerId.c"
+    "CMakeFiles\\3.28.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp"
 )
 
 add_custom_command(
