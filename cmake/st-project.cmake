@@ -64,6 +64,7 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
+    "Core\\Src\\joystick.c"
     "Core\\Src\\main.c"
     "Core\\Src\\retarget.c"
     "Core\\Src\\stm32c0xx_hal_msp.c"
@@ -72,7 +73,6 @@ target_sources(
     "Core\\Src\\sysmem.c"
     "Core\\Src\\system_stm32c0xx.c"
     "Core\\Src\\userapp.c"
-    "Core\\Src\\joystick.c"
     "Core\\Startup\\startup_stm32c011f6px.s"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc.c"
@@ -92,8 +92,6 @@ target_sources(
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal.c"
-    "CMakeFiles\\3.28.1\\CompilerIdC\\CMakeCCompilerId.c"
-    "CMakeFiles\\3.28.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp"
 )
 
 add_custom_command(

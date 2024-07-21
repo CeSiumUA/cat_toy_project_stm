@@ -20,7 +20,6 @@
         {
           "text": "load build/debug/build/cat-toy-stm.elf"
         }
-      ],
-      "svdPath": "${st.svd}/STM32C011.svd"    }
+      ]    }
   ]
 }
