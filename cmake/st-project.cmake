@@ -72,6 +72,7 @@ target_sources(
     "Core\\Src\\sysmem.c"
     "Core\\Src\\system_stm32c0xx.c"
     "Core\\Src\\userapp.c"
+    "Core\\Src\\joystick.c"
     "Core\\Startup\\startup_stm32c011f6px.s"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc.c"
