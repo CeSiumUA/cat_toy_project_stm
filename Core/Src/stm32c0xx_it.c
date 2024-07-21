@@ -158,11 +158,11 @@ void DMA1_Channel1_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-  userapp_adc_full_cplt();
+  joystick_adc_full_cplt();
 }
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
 {
-  userapp_adc_half_cplt();
+  joystick_adc_half_cplt();
 }
 /* USER CODE END 1 */
