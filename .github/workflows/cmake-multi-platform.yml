@@ -1,0 +1,40 @@
+# This starter workflow is for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
+# See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
+name: CMake on multiple platforms
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:  
+  cmake-build:
+    strategy:
+      matrix:
+        configuration: [Release, Debug]
+        os: [ubuntu-latest]
+        
+    runs-on: ${{ matrix.os }}
+
+    
+    name: Build project with CMake
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set reusable strings
+      # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
+      id: strings
+      shell: bash
+      run: |
+        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+        
+    - name: Set execution rights
+      run: |
+        chmod +x build.sh
+
+    - name: Build project with CMake
+      env:
+        BUILD_CONFIGURATION: ${{ matrix.configuration }}
+      run: |
+        ./build.sh
