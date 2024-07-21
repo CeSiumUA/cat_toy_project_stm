@@ -5,6 +5,7 @@
 #include "retarget.h"
 #include "main.h"
 #include "joystick.h"
+#include "servo.h"
 
 void userapp_init(void);
 void userapp_loop(void);

@@ -26,17 +26,17 @@ HAL_StatusTypeDef joystick_init_periph(void){
 }
 
 void joystick_get_state(joystick_state_t *state) {
+    uint8_t offs = 0;
     if(half_cplt){
-        state->x = adc_data[0];
-        state->y = adc_data[1];
-        // BTN is not working right now
-        state->btn = false;
+        offs = 0;
     } else if(full_cplt){
-        state->x = adc_data[2];
-        state->y = adc_data[3];
-        // BTN is not working right now
-        state->btn = false;
+        offs = 2;
     }
+    
+    state->x = adc_data[offs];
+    state->y = adc_data[offs + 1];
+    // BTN is not working right now
+    state->btn = false;
 }
 
 void joystick_adc_half_cplt(void) {

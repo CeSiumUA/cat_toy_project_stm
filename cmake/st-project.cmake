@@ -67,6 +67,7 @@ target_sources(
     "Core\\Src\\joystick.c"
     "Core\\Src\\main.c"
     "Core\\Src\\retarget.c"
+    "Core\\Src\\servo.c"
     "Core\\Src\\stm32c0xx_hal_msp.c"
     "Core\\Src\\stm32c0xx_it.c"
     "Core\\Src\\syscalls.c"
@@ -92,6 +93,8 @@ target_sources(
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_uart.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal.c"
+    "CMakeFiles\\3.20.0\\CompilerIdC\\CMakeCCompilerId.c"
+    "CMakeFiles\\3.20.0\\CompilerIdCXX\\CMakeCXXCompilerId.cpp"
 )
 
 add_custom_command(
