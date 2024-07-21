@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "userapp.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,7 +61,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define JOYSTICK_BTN_Pin GPIO_PIN_8
 #define JOYSTICK_BTN_GPIO_Port GPIOA
-#define JOYSTICK_BTN_EXTI_IRQn EXTI4_15_IRQn
 #define JOYSTICK_Y_Pin GPIO_PIN_11
 #define JOYSTICK_Y_GPIO_Port GPIOA
 #define JOYSTICK_X_Pin GPIO_PIN_12

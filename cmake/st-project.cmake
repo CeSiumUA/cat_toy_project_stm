@@ -65,11 +65,13 @@ target_link_options(
 target_sources(
     ${TARGET_NAME} PRIVATE
     "Core\\Src\\main.c"
+    "Core\\Src\\retarget.c"
     "Core\\Src\\stm32c0xx_hal_msp.c"
     "Core\\Src\\stm32c0xx_it.c"
     "Core\\Src\\syscalls.c"
     "Core\\Src\\sysmem.c"
     "Core\\Src\\system_stm32c0xx.c"
+    "Core\\Src\\userapp.c"
     "Core\\Startup\\startup_stm32c011f6px.s"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc_ex.c"
     "Drivers\\STM32C0xx_HAL_Driver\\Src\\stm32c0xx_hal_adc.c"
