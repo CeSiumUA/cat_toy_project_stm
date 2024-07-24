@@ -64,6 +64,7 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
+    "Core\\Src\\esp8266.c"
     "Core\\Src\\joystick.c"
     "Core\\Src\\main.c"
     "Core\\Src\\retarget.c"

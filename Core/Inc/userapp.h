@@ -6,6 +6,7 @@
 #include "main.h"
 #include "joystick.h"
 #include "servo.h"
+#include "esp8266.h"
 
 void userapp_init(void);
 void userapp_loop(void);

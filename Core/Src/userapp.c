@@ -3,7 +3,8 @@
 extern UART_HandleTypeDef huart2;
 
 void userapp_init(void) {
-    retarget_init(&huart2);
+    // retarget_init(&huart2);
+    esp8266_init(&huart2);
 }
 
 void userapp_loop(void) {
