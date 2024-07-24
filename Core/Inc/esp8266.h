@@ -3,10 +3,11 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #include "stm32c0xx_hal.h"
 
 #define ESP8266_CMD_AT                  "AT\r\n"
-#define ESP8266_CMD_EXPECTED_AT         "AT\r\r\n\r\nOK\r\n"
+#define ESP8266_CMD_EXPECTED_AT         "AT\n\nOK\n"
 
 #define ESP8266_CMD_CWMODE              "AT+CWMODE=1\r\n"
 
@@ -21,5 +22,6 @@
 #define ESP9266_IPD_HEADER              "+IPD"
 
 void esp8266_init(UART_HandleTypeDef *huart);
+HAL_StatusTypeDef esp8266_connect_wifi(char *ssid, char *password);
 
 #endif /* INC_ESP8266_H_ */
