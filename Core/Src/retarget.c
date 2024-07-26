@@ -4,7 +4,9 @@ static UART_HandleTypeDef *print_uart = NULL;
 
 void retarget_init(UART_HandleTypeDef *huart) {
     print_uart = huart;
+#ifdef RATERGET_SET_VBUF_NOBUF
     setvbuf(stdout, NULL, _IONBF, 0);
+#endif
 }
 
 int _write(int file, char *ptr, int len) {
