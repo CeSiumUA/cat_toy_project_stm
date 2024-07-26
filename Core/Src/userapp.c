@@ -27,6 +27,7 @@ void userapp_loop(void) {
 
     while(true){
         joystick_get_state(&state);
+        joystick_sequence_detect(&state);
 
         // printf("X: %d, Y: %d\n", state.x, state.y);
 

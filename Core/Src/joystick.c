@@ -9,6 +9,7 @@ static bool use_random_sequence = false;
 static uint16_t adc_data[4] = {0};
 uint32_t last_debounce_time = 0;
 joystick_random_sequence random_sequence = WAIT_FOR_UP1;
+joystick_direction last_dir = JOYSTICK_CENTER;
 
 static void joystick_generate_random_states(joystick_state_t *state){
     state->x = rand() % 4096;
@@ -72,6 +73,12 @@ void joystick_sequence_detect(joystick_state_t *state) {
         return;
     }
 
+    if(dir == last_dir){
+        return;
+    }
+
+    last_dir = dir;
+
     if((current_tick - last_debounce_time) >= JOYSTICK_SEQUENCE_EXPIRE_MS){
         random_sequence = WAIT_FOR_UP1;
     }
@@ -79,29 +86,34 @@ void joystick_sequence_detect(joystick_state_t *state) {
     switch(random_sequence){
         case WAIT_FOR_UP1:
             if(dir == JOYSTICK_UP){
+                printf("up\n");
                 random_sequence = WAIT_FOR_UP2;
                 last_debounce_time = current_tick;
             }
             break;
         case WAIT_FOR_UP2:
             if(dir == JOYSTICK_UP){
+                printf("up2\n");
                 random_sequence = WAIT_FOR_DOWN1;
                 last_debounce_time = current_tick;
             }
             break;
         case WAIT_FOR_DOWN1:
             if(dir == JOYSTICK_DOWN){
+                printf("down\n");
                 random_sequence = WAIT_FOR_DOWN2;
                 last_debounce_time = current_tick;
             }
             break;
         case WAIT_FOR_DOWN2:
             if(dir == JOYSTICK_DOWN){
+                printf("down2\n");
                 random_sequence = SEQUENCE_DETECTED;
                 last_debounce_time = current_tick;
             }
             break;
         case SEQUENCE_DETECTED:
+            printf("sequence detected\n");
             break;
     }
 
