@@ -29,7 +29,7 @@ static void joystick_generate_random_states(joystick_state_t *state){
     // BTN is not working right now
     state->btn = false;
 
-    if(random_gen_steps >= JOYSTICK_INTERPOLATION_STEPS){
+    if((random_gen_steps >= JOYSTICK_INTERPOLATION_STEPS) || (((uint16_t)random_x == (uint16_t)target_x) && ((uint16_t)random_y == (uint16_t)target_y))){
         joystick_generate_targets();
         random_gen_steps = 0;
     }
@@ -161,6 +161,8 @@ void joystick_process(joystick_state_t *state) {
         printf("Sequence detected\n");
         use_random_sequence = !use_random_sequence;
         random_sequence = WAIT_FOR_UP1;
+        random_x = (float)state->x;
+        random_y = (float)state->y;
     }
 }
 
