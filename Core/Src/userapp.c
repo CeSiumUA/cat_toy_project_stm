@@ -25,9 +25,10 @@ void userapp_loop(void) {
     //wait for ADC to stabilize
     HAL_Delay(100);
 
+    printf("Entering endless loop\n");
+
     while(true){
-        joystick_get_state(&state);
-        joystick_sequence_detect(&state);
+        joystick_process(&state);
 
         // printf("X: %d, Y: %d\n", state.x, state.y);
 
