@@ -33,5 +33,7 @@ void userapp_loop(void) {
         // printf("X: %d, Y: %d\n", state.x, state.y);
 
         servo_set_angle(state.x, state.y);
+
+        HAL_Delay(10);
     }
 }
