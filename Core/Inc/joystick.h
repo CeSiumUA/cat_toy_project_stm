@@ -24,7 +24,7 @@
 #define JOYSTICK_DEBOUNCE_TIME_MS                               50
 #define JOYSTICK_SEQUENCE_EXPIRE_MS                             3000
 
-#define JOYSTICK_INTERPOLATION_STEPS                            100
+#define JOYSTICK_INTERPOLATION_STEPS                            200
 
 typedef struct {
     uint16_t x;
