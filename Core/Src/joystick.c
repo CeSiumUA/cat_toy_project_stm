@@ -112,46 +112,48 @@ void joystick_process(joystick_state_t *state) {
         random_sequence = WAIT_FOR_UP1;
     }
 
-    switch(random_sequence){
-        case WAIT_FOR_UP1:
-            if(dir == JOYSTICK_UP){
-                printf("up\n");
-                random_sequence = WAIT_FOR_UP2;
-                last_debounce_time = current_tick;
-            } else{
-                random_sequence = WAIT_FOR_UP1;
-            }
-            break;
-        case WAIT_FOR_UP2:
-            if(dir == JOYSTICK_UP){
-                printf("up2\n");
-                random_sequence = WAIT_FOR_DOWN1;
-                last_debounce_time = current_tick;
-            } else{
-                random_sequence = WAIT_FOR_UP1;
-            }
-            break;
-        case WAIT_FOR_DOWN1:
-            if(dir == JOYSTICK_DOWN){
-                printf("down\n");
-                random_sequence = WAIT_FOR_DOWN2;
-                last_debounce_time = current_tick;
-            } else{
-                random_sequence = WAIT_FOR_UP1;
-            }
-            break;
-        case WAIT_FOR_DOWN2:
-            if(dir == JOYSTICK_DOWN){
-                printf("down2\n");
-                random_sequence = SEQUENCE_DETECTED;
-                last_debounce_time = current_tick;
-            } else{
-                random_sequence = WAIT_FOR_UP1;
-            }
-            break;
-        case SEQUENCE_DETECTED:
-            printf("sequence detected\n");
-            break;
+    if(dir != JOYSTICK_CENTER){
+        switch(random_sequence){
+            case WAIT_FOR_UP1:
+                if(dir == JOYSTICK_UP){
+                    printf("up\n");
+                    random_sequence = WAIT_FOR_UP2;
+                    last_debounce_time = current_tick;
+                } else{
+                    random_sequence = WAIT_FOR_UP1;
+                }
+                break;
+            case WAIT_FOR_UP2:
+                if(dir == JOYSTICK_UP){
+                    printf("up2\n");
+                    random_sequence = WAIT_FOR_DOWN1;
+                    last_debounce_time = current_tick;
+                } else{
+                    random_sequence = WAIT_FOR_UP1;
+                }
+                break;
+            case WAIT_FOR_DOWN1:
+                if(dir == JOYSTICK_DOWN){
+                    printf("down\n");
+                    random_sequence = WAIT_FOR_DOWN2;
+                    last_debounce_time = current_tick;
+                } else{
+                    random_sequence = WAIT_FOR_UP1;
+                }
+                break;
+            case WAIT_FOR_DOWN2:
+                if(dir == JOYSTICK_DOWN){
+                    printf("down2\n");
+                    random_sequence = SEQUENCE_DETECTED;
+                    last_debounce_time = current_tick;
+                } else{
+                    random_sequence = WAIT_FOR_UP1;
+                }
+                break;
+            case SEQUENCE_DETECTED:
+                printf("sequence detected\n");
+                break;
+        }
     }
 
     if(random_sequence == SEQUENCE_DETECTED){
